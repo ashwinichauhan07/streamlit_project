@@ -1,5 +1,5 @@
 from contants import COHERE_API_KEY
-from langchain.chat_models import ChatCohere
+from langchain_community.chat_models import ChatCohere
 from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
