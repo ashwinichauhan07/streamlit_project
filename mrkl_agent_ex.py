@@ -4,8 +4,15 @@ from langchain.memory import ConversationBufferWindowMemory
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 import streamlit as st
+import os
+from dotenv import load_dotenv
 
-os.environ["COHERE_API_KEY"]=COHERE_API_KEY
+# Load the .env file from the current directory
+load_dotenv()
+
+# Access variables using os.getenv()
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+
 prompt=PromptTemplate(
     input_variables=["chat_history","question"],
     template="""You are a kind AI agent, you are currently talking to human answer him/her in a friendly tone 
