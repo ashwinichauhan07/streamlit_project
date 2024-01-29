@@ -1,9 +1,17 @@
-from contants import COHERE_API_KEY
+
 from langchain_community.chat_models import ChatCohere
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 import streamlit as st
+import os
+from dotenv import load_dotenv
+
+# Load the .env file from the current directory
+load_dotenv()
+
+# Access variables using os.getenv()
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
 
 prompt=PromptTemplate(
     input_variables=["chat_history","question"],
